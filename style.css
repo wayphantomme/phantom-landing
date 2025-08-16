@@ -1,0 +1,152 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+  color: #333;
+}
+
+header {
+  text-align: center;
+  padding: 50px;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  color: white;
+}
+
+section {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.input-row {
+  display: flex;
+  gap: 12px;
+  margin: 12px 0;
+}
+
+#nameInput {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+#greetBtn {
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  background: #2575fc;
+  color: #fff;
+  transition: transform .08s ease;
+}
+#greetBtn:active { transform: scale(0.98); }
+
+.option {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #555;
+}
+
+#greetMessage {
+  min-height: 28px;        /* biar layout gak loncat */
+  margin-top: 14px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Fade-up animation */
+.fade-up {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: fadeUp .35s ease forwards;
+}
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Cursor kedip buat typewriter */
+.type-cursor::after {
+  content: "▌";
+  margin-left: 4px;
+  animation: blink 1s steps(1) infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+/* ==== THEME TOKENS ==== */
+:root {
+  --bg: #f4f4f4;
+  --card: #ffffff;
+  --text: #333333;
+  --muted: #555555;
+  --primary: #2575fc;
+  --border: #dddddd;
+}
+.dark {
+  --bg: #0e1116;
+  --card: #121620;
+  --text: #e6e6e6;
+  --muted: #a8b3bf;
+  --primary: #4c8eff;
+  --border: #243041;
+}
+
+/* apply tokens */
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+header {
+  background: linear-gradient(90deg, #6a11cb, var(--primary));
+}
+section {
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+/* existing controls adapt colors */
+#nameInput {
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+}
+#greetBtn {
+  background: var(--primary);
+}
+.option { color: var(--muted); }
+
+/* history styling */
+.history {
+  margin-top: 16px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--border);
+}
+.history h3 {
+  margin: 0 0 8px 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+#greetHistory {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#greetHistory li {
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 6px;
+  font-size: 14px;
+  background: var(--bg);
+}
+
+/* (dari versi sebelumnya) animasi & input-row tetap sama */
