@@ -1,0 +1,9 @@
+{
+  "name": "Phantom #2",
+  "description": "Second NFT by Phantom on Sepolia.",
+  "image": "https://wayphantomme.github.io/phantom-landing/nft/2.png",
+  "attributes": [
+    {"trait_type": "Tier", "value": "Genesis"},
+    {"trait_type": "Vibe", "value": "GM"}
+  ]
+}
